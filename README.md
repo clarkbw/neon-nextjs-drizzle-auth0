@@ -43,17 +43,18 @@ npm i -D drizzle-kit
 ```typescript
 // drizzle.config.ts
 import type { Config } from "drizzle-kit";
+// requires a .env file, doesn't work with the .env.local file
 import "dotenv/config";
 
 if (!process.env.DATABASE_URL)
   throw new Error("DATABASE_URL not found in environment");
 
 export default {
-  schema: "./app/db/schema.ts",
+  schema: "./src/db/schema.ts",
   out: "./drizzle",
-  driver: "pg",
+  dialect: "postgresql",
   dbCredentials: {
-    connectionString: process.env.DATABASE_URL,
+    url: process.env.DATABASE_URL,
   },
   strict: true,
 } satisfies Config;
