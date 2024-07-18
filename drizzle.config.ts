@@ -1,4 +1,5 @@
 import type { Config } from "drizzle-kit";
+// requires a .env file, doesn't work with the .env.local file
 import "dotenv/config";
 
 if (!process.env.DATABASE_URL)
