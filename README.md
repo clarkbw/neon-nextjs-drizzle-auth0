@@ -1,3 +1,22 @@
+## Notes
+
+Using the Quickstart for Auth0 here
+https://auth0.com/docs/quickstart/webapp/nextjs/01-login
+
+ran `npm install @auth0/nextjs-auth0`
+
+created a `.env` file and a `.env.example`.
+
+ran `openssl rand -hex 32` in CLI to create a valu for the `AUTH0_SECRET` environment variable.
+
+created route handler
+```
+cd src
+mkdir -p 'app/api/auth/[auth0]' && touch 'app/api/auth/[auth0]/route.js'
+```
+
+didn't create `app/layout.jsx` because this is Typescript, instead updated the `app/layout.tsx` file.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
