@@ -25,6 +25,8 @@ Added `http://localhost:3000/api/auth/callback` to the Allowed Callback URLs and
 
 ### Neon
 
+Created a Neon account (for free) and grabbed the `postgresql://` connection string from there.
+
 Using the guide but for Drizzle
 https://neon.tech/docs/get-started-with-neon/connect-neon
 As well as some of this example
@@ -55,6 +57,14 @@ export default {
   strict: true,
 } satisfies Config;
 ```
+
+Added `DATABASE_URL='postgresql://...` with my Neon connection string to the `.env` file.
+
+Ran `npx drizzle-kit push` successfully
+
+Running `npx drizzle-kit push` I'm seeing warnings
+> [!WARNING]
+> Warning '@neondatabase/serverless' can only connect to remote Neon/Vercel Postgres/Supabase instances through a websocket
 
 ## Getting Started
 
