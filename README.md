@@ -1,5 +1,7 @@
 ## Notes
 
+### Auth0
+
 Using the Quickstart for Auth0 here
 https://auth0.com/docs/quickstart/webapp/nextjs/01-login
 
@@ -17,9 +19,17 @@ mkdir -p 'app/api/auth/[auth0]' && touch 'app/api/auth/[auth0]/route.js'
 
 didn't create `app/layout.jsx` because this is Typescript, instead updated the `app/layout.tsx` file.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Added `<a href="/api/auth/login">Login</a>` to the `page.tsx`
+
+Added `http://localhost:3000/api/auth/callback` to the Allowed Callback URLs and login works.
+
+### Neon
+
+
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
