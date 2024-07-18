@@ -25,7 +25,36 @@ Added `http://localhost:3000/api/auth/callback` to the Allowed Callback URLs and
 
 ### Neon
 
+Using the guide but for Drizzle
+https://neon.tech/docs/get-started-with-neon/connect-neon
+As well as some of this example
+https://github.com/neondatabase/guide-neon-next-clerk/tree/main/app/db
 
+you get a bunch of errors if you don't do it this way. `drizzle-orm` doesn't like the nextjs stuff.
+Run:
+```shell
+npm i dotenv @neondatabase/serverless
+npm i drizzle-orm --legacy-peer-deps
+npm i -D drizzle-kit
+```
+
+```typescript
+import type { Config } from "drizzle-kit";
+import "dotenv/config";
+
+if (!process.env.DATABASE_URL)
+  throw new Error("DATABASE_URL not found in environment");
+
+export default {
+  schema: "./app/db/schema.ts",
+  out: "./drizzle",
+  driver: "pg",
+  dbCredentials: {
+    connectionString: process.env.DATABASE_URL,
+  },
+  strict: true,
+} satisfies Config;
+```
 
 ## Getting Started
 
